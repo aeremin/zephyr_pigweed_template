@@ -9,3 +9,8 @@ target_sources(app
   PRIVATE
     main.cc
  )
+
+target_link_libraries(app
+  PRIVATE
+    pw_log
+)
