@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+  schedule:
+  - cron:  '0 13 * * *' # Every day at 1pm.
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: Validate build steps
+        run: |
+          python3 -m venv .venv
+          source .venv/bin/activate
+          pip install west
+          west init -l manifest
+          west update
+          pip install -r zephyr/scripts/requirements.txt
+          source pigweed/bootstrap.sh
+          source activate.sh
+          west build -p -b nrf52dk_nrf52832 sample_app
