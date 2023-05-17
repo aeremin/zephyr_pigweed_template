@@ -1,0 +1,16 @@
+# Python virtual environment
+.venv
+
+# Those folders are managed by the `west` tool and contain various Zephyr
+# modules (including Pigweed).
+bootloader/
+modules/
+pigweed/
+zephyr/
+tools/
+
+# `west` configuration folder, created by it automatically
+.west
+
+# Build artifacts
+build/
