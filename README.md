@@ -4,20 +4,11 @@
 
 On first setup:
 ```bash
-$ python3 -m venv .venv
-$ source .venv/bin/activate
-$ pip install west
-$ west init -l manifest
-$ west update
-$ pip install -r zephyr/scripts/requirements.txt
-$ source pigweed/bootstrap.sh
-$ source activate.sh
+$ source bootstrap.sh
 ```
 
 On following work days:
 ```bash
-$ source .venv/bin/activate
-$ source pigweed/activate.sh
 $ source activate.sh
 ```
 
