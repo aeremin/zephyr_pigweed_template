@@ -13,4 +13,6 @@ target_sources(app
 target_link_libraries(app
   PRIVATE
     pw_log
+    pw_thread.sleep
+    pw_chrono.system_clock
 )
